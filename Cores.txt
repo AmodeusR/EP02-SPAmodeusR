@@ -1,0 +1,4 @@
+Tema escuro (onda): #632CAF
+
+Mais claro (principal): #9D64D8
+Mais escuro (neutra principal): #31293D

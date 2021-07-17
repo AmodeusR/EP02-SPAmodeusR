@@ -1,0 +1,408 @@
+@font-face {
+  font-family: 'Heavitas';
+  font-style: normal;
+  font-weight: normal;
+  src: url(./fontes/Heavitas.woff) format('woff');
+}
+
+
+:root {
+  --cor-principal: #b48be1;
+  --cor-principal-texto: #9354d4;
+  --cor-onda-escura: #632CAF;
+  
+  --cor-neutra-escura: #31293D;
+  --cor-neutra-clara: #fff;
+  
+  --fonte-principal: 'Heavitas';
+  --fonte-secundaria: 'Raleway';
+
+  --filtro: invert(62%) sepia(92%) saturate(1489%) hue-rotate(215deg) brightness(99%) contrast(78%);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+ /* // DESENHO DO CABEÇALHO // */
+
+.container-grade {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0 40px;
+  gap: 20px;
+  grid-template-areas: ". . cabecalho cabecalho . .";
+}
+
+.cab-escuro {
+  background: var(--cor-onda-escura);
+  color: white;
+}
+
+.cabecalho {
+  grid-area: cabecalho;
+  width: 100%;
+}
+
+.onda-divisora-escura {
+  background: url("./imagens/onda-escura.svg");
+  background-position: bottom left;
+  background-size: cover;
+  height: 12vw;
+  margin-left: -5px;
+  margin-top: -5px;
+  background-color: var(--cor-principal);
+  position: relative;
+  z-index: -10;
+}
+
+/* // CONTEÚDO DO CABEÇALHO (ONDA ESCURA) // */
+.flex-linha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  filter: var(--filtro);
+  margin-right: .75rem;
+  width: 32px;
+  height: 32px;
+}
+
+/* Fonte com 7px de vazamento vertical (vazamento proporcional de 2px para cada 1rem, iniciado em 3px) */
+.titulo {
+  margin: 13px 0px;
+  font-size: 3rem;
+  font-family: var(--fonte-principal), sans-serif;
+}
+
+.subtitulo {
+  font-family: var(--fonte-principal), sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 4rem 0 1rem;
+}
+
+.sbt-descricao {
+  margin: 0 auto;
+  font-family: var(--fonte-secundaria), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  text-align: center;
+  width: 333px;
+}
+
+
+
+/* // CONTEÚDO DO CABEÇALHO (ONDA CLARA) */
+
+.cab-claro {
+  background: var(--cor-principal);
+  padding: 4rem 0;
+}
+
+.flexform {
+  display: flex;
+  justify-content: center;
+}
+
+#email {
+  padding: .3rem .3rem;
+  height: 2.125rem;
+  flex-grow: 1;
+  max-width: 520px;
+  min-width: 350px;
+  
+  font-family: var(--fonte-principal), sans-serif;
+  color: var(--cor-neutra-escura);
+  
+  border-radius: 8px;
+  border: var(--cor-neutra-escura) solid 3px;
+  transition: all 150ms ease;
+}
+
+#email:focus {
+  outline: white 4px solid;
+}
+
+::placeholder {
+  color: var(--cor-onda-escura);
+  font-size: 0.7rem;
+}
+
+.inscricao {
+  padding: 0 1.2em;
+  align-self: stretch;
+  margin-left: 2rem;
+  min-width: 154px;
+  
+  font-family: var(--fonte-principal), sans-serif;
+  font-size: .92rem;
+  
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 3px 0px #695085;
+  background: var(--cor-neutra-escura);
+  color: white;
+  transition: all 250ms ease;
+}
+
+.inscricao:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px 4px #69508570;
+}
+
+.onda-divisora-clara {
+  background: url(./imagens/onda-clara.svg);
+  background-position: bottom left;
+  background-size: cover;
+  height: 7vw;
+  margin: -5px 0 0 -5px;
+}
+
+
+
+/* // SESSÃO PRINCIPAL (MAIN) // */
+
+
+.sessao-principal {
+  grid-template-areas: "video video video listabenef listabenef listabenef";
+  padding-top: 7rem;
+  padding-bottom: 13rem;
+}
+
+.video {
+  grid-area: video;
+  width: min(100%, 900px);
+  aspect-ratio: 16/9;
+  justify-self: end;
+}
+
+.lista-de-beneficios {
+  grid-area: listabenef;
+  font-family: var(--fonte-secundaria), sans-serif;
+  font-size: 1.2rem;
+  margin-left: 3rem;
+  justify-self: end;
+  width: 80%;
+}
+
+.grade-lista {
+  display: grid;
+  align-content: space-around;
+  color: var(--cor-principal-texto);
+}
+
+.item-de-beneficios p {
+  font-weight: 500;
+  margin-top: 0;
+  margin-left: 1rem;
+  width: min(470px, 80%);
+}
+.item-de-beneficios h2 {
+  font-family: var(--fonte-principal);
+  margin: 0;
+}
+
+.titulo-de-beneficios {
+  display: flex;
+  align-items: center;
+}
+
+
+.icones {
+  padding-right: 1rem;
+  margin-left: calc(-1rem - 30px);
+  margin-top: -4px;
+}
+
+
+
+/* // RODAPÉ // */
+
+
+.rodape {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-areas: ". criador separador1 separador2 descricao .";
+  background: #31293d;
+  height: 12rem;
+  border-top: var(--cor-principal-texto) solid 5px;
+  
+  font-family: var(--fonte-secundaria);
+  font-size: 0.88rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+.creditos,
+.lv,
+.descricao-geral {
+  grid-row: 1 / 2;
+}
+
+.creditos {
+  grid-column: criador / separador1;
+}
+
+.nome-em-destaque {
+  display: block;
+
+  font-size: 1.5rem;
+  color: hsl(270, 60%, 65%);
+  font-weight: bold;
+}
+
+.lv {
+  grid-column: separador1 / separador2;
+  height: 130px;
+  border-left: var(--cor-principal-texto) solid 6px;
+  border-radius: 4px;  
+}
+
+.descricao-geral {
+  grid-column: separador2 / descricao;
+  width: 285px;
+}
+
+/* // VERSÃO MÓVEL // */
+
+@media (max-width: 80em) {
+  
+  .container-grade {
+    grid-template-areas: ". cabecalho cabecalho cabecalho cabecalho .";
+  }
+
+  .sessao-principal {
+    grid-template-columns: 1fr;
+    grid-template-areas: "video" "listabenef";
+    padding-bottom: 8rem;
+  }
+
+  .video {
+    justify-self: center;
+  }
+
+  .lista-de-beneficios {
+    justify-self: center;
+    justify-content: center;
+    row-gap: 1.5em;
+    text-align: center; /* // O objetivo era ter o texto centralizado, infelizmente o ícone fica distante quando  texto quebra, tornando feio o design. */
+    margin-left: 0;
+    width: 50%;
+  }
+  
+  .item-de-beneficios {
+    margin-top: 1.5rem;
+  }
+
+  .item-de-beneficios > p {
+    margin: auto;
+    width: 70%;
+  }
+
+  .titulo-de-beneficios {
+    justify-content: center;
+    
+  }
+  
+
+
+  .rodape {
+    grid-template-areas: "criador criador separador1 separador2 descricao descricao";
+  }
+}
+
+@media (max-width: 57em ) {
+  .container-grade {
+    grid-template-columns: 1fr;
+    grid-template-areas: "cabecalho";
+  }
+
+  .flexform {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #email {
+    min-width: calc(80% - .3rem - 5px);
+    text-align: center;
+  }
+  .inscricao {
+    /* align-self: center; */
+    margin: auto;
+    padding: 0;
+    margin-top: 1rem;
+    height: 2.625rem;
+    width: 80%;
+  }
+
+  .sessao-principal {
+    grid-template-columns: 1fr;
+    grid-template-areas: "video" "listabenef";
+    padding-bottom: 8rem;
+  }
+
+  .lista-de-beneficios {
+    width: 70%;
+  }
+
+  .rodape {
+    grid-template-areas: "criador" "separador" "descricao";
+    height: 16rem;
+    align-content: center;
+  }
+
+  .creditos {
+    grid-area: criador;
+  }
+
+  .lv {
+    grid-area: separador;
+    width: 150px;
+    height: 0;
+    border-top: var(--cor-principal-texto) solid 6px;
+    border-left: 0;
+    border-radius: 4px;  
+  }
+
+  .descricao-geral {
+    grid-area: descricao;
+  }
+}
+
+@media (max-width: 29em) {
+  .container-grade {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .logo {
+    width: 24px;
+    height: 24px;
+  }
+  .titulo {
+    font-size: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1.5rem;
+  }
+
+  .sbt-descricao {
+    font-size: 1rem;
+  }
+
+  .item-de-beneficios p {
+    width: 100%;
+  }
+}
+
