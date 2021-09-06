@@ -3,11 +3,15 @@
 
 Exercício de projeção de site com Figma e desenvolvimento prático responsivo, usando somente HTML e CSS, inspirado nas videoaulas de *Web Dev Simplified*.
 
-Link para as aulas a seguir:
+### Link para as aulas a seguir:
 
 - Video 1 (Figma): https://youtu.be/C13ng8VzQAY
 
-- Video 2 (Prática): https://youtu.be/K8BigvW7sZU 
+- Video 2 (Prática): https://youtu.be/K8BigvW7sZU
+
+### Link para o site online:
+
+https://amodeusr.github.io/EP02-SPAmodeusR/
 
 
 ## English
@@ -15,8 +19,12 @@ Link para as aulas a seguir:
 
 Website design exercise with Figma and practical responsive development, using only HTML and CSS, inspired by *Web Dev simplified*'s video lessons.
 
-Video lessons link here:
+### Video lessons link here:
 
 - Video 1 (Figma): https://youtu.be/C13ng8VzQAY
 
 - Video 2 (Practice): https://youtu.be/K8BigvW7sZU
+
+### Live site link:
+
+https://amodeusr.github.io/EP02-SPAmodeusR/
